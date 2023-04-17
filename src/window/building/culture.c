@@ -291,7 +291,8 @@ static void draw_temple_info(building_info_context *c, int image_offset)
             c->x_offset + 222, c->y_offset + 60, font, 0);
         text_draw_multiline(translation_for(TR_BUILDING_CERES_TEMPLE_MODULE_DESC),
             c->x_offset + 112, c->y_offset + 90, BLOCK_SIZE * c->width_blocks - 132, FONT_NORMAL_BLACK, 0);
-        image_draw(image_offset + image_group(GROUP_PANEL_WINDOWS),
+        int image_id = assets_lookup_image_id(ASSET_CERES_FAUNA);
+        image_draw(image_id,
             c->x_offset + 16, c->y_offset + 45, COLOR_MASK_NONE, SCALE_NONE);
         return;
     }
@@ -342,8 +343,14 @@ static void draw_temple_info(building_info_context *c, int image_offset)
         return;
     }
 
-    image_draw(image_offset + image_group(GROUP_PANEL_WINDOWS),
-        c->x_offset + 180, c->y_offset + 45, COLOR_MASK_NONE, SCALE_NONE);
+    if (building_is_ceres_temple(b->type)) {
+        int image_id = assets_lookup_image_id(ASSET_CERES_FAUNA);
+        image_draw(image_id, c->x_offset + 180, c->y_offset + 45, COLOR_MASK_NONE, SCALE_NONE);
+    }
+    else {
+        image_draw(image_offset + image_group(GROUP_PANEL_WINDOWS),
+            c->x_offset + 180, c->y_offset + 45, COLOR_MASK_NONE, SCALE_NONE);
+    }
 }
 
 void window_building_draw_temple_ceres(building_info_context *c)

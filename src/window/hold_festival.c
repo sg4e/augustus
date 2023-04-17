@@ -94,12 +94,12 @@ static void draw_background(void)
     outer_panel_draw(48, 48, 34, 20);
     lang_text_draw_centered(58, 25 + city_festival_selected_god(), 48, 60, 544, FONT_LARGE_BLACK);
     for (int god = 0; god < MAX_GODS; god++) {
+        int image_id = assets_lookup_image_id(ASSET_CERES_FAUNA);
         if (god == city_festival_selected_god()) {
-            button_border_draw(100 * god + 66, 92, 90, 100, 1);
-            image_draw(image_group(GROUP_PANEL_WINDOWS) + god + 21, 100 * god + 70, 96, COLOR_MASK_NONE, SCALE_NONE);
-        } else {
-            image_draw(image_group(GROUP_PANEL_WINDOWS) + god + 16, 100 * god + 70, 96, COLOR_MASK_NONE, SCALE_NONE);
+            button_border_draw(100 * god + 66, 92, 100, 105, 1);
+            // would be cute to load a happy idol image if they're the one selected
         }
+        image_draw(image_id, 100 * god + 70, 96, COLOR_MASK_NONE, SCALE_NONE);
     }
     draw_buttons();
 

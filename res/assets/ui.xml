@@ -238,4 +238,6 @@
 	<image id="First Ornament" src="Hibernia" />
 	<image src="Etna" />
 	<image src="Rhodes" />
+	<!-- Note: Add Ceres Fauna uuu -->
+	<image id="CeresFauna" src="CeresFauna" />
 </assetlist>
