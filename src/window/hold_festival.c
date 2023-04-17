@@ -94,7 +94,15 @@ static void draw_background(void)
     outer_panel_draw(48, 48, 34, 20);
     lang_text_draw_centered(58, 25 + city_festival_selected_god(), 48, 60, 544, FONT_LARGE_BLACK);
     for (int god = 0; god < MAX_GODS; god++) {
-        int image_id = assets_lookup_image_id(ASSET_CERES_FAUNA);
+        int image_id;
+        switch (god) {
+            case 0: image_id = assets_lookup_image_id(ASSET_CERES_FAUNA); break;
+            case 1: image_id = assets_lookup_image_id(ASSET_GAWR_GURA); break;
+            case 2: image_id = assets_lookup_image_id(ASSET_NANASHI_MUMEI); break;
+            case 3: image_id = assets_lookup_image_id(ASSET_HAKOS_BAELZ); break;
+            case 4: image_id = assets_lookup_image_id(ASSET_TAKANASHI_KIARA); break;
+            default: image_id = assets_lookup_image_id(ASSET_GAWR_GURA); break;
+        }
         if (god == city_festival_selected_god()) {
             button_border_draw(100 * god + 66, 92, 100, 105, 1);
             // would be cute to load a happy idol image if they're the one selected
