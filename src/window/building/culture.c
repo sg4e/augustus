@@ -357,6 +357,10 @@ static void draw_temple_info(building_info_context *c, int image_offset)
         //the wide asset adjust the x coordinate, see below
         image_draw(image_id, c->x_offset + 180 - 24, c->y_offset + 45, COLOR_MASK_NONE, SCALE_NONE);
     }
+    else if (building_is_mercury_temple(b->type)) {
+        int image_id = assets_lookup_image_id(ASSET_NANASHI_MUMEI);
+        image_draw(image_id, c->x_offset + 180, c->y_offset + 45, COLOR_MASK_NONE, SCALE_NONE);
+    }
     else {
         image_draw(image_offset + image_group(GROUP_PANEL_WINDOWS),
             c->x_offset + 180, c->y_offset + 45, COLOR_MASK_NONE, SCALE_NONE);
