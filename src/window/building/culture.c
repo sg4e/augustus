@@ -347,6 +347,10 @@ static void draw_temple_info(building_info_context *c, int image_offset)
         int image_id = assets_lookup_image_id(ASSET_CERES_FAUNA);
         image_draw(image_id, c->x_offset + 180, c->y_offset + 45, COLOR_MASK_NONE, SCALE_NONE);
     }
+    else if (building_is_neptune_temple(b->type)) {
+        int image_id = assets_lookup_image_id(ASSET_GAWR_GURA);
+        image_draw(image_id, c->x_offset + 180, c->y_offset + 45, COLOR_MASK_NONE, SCALE_NONE);
+    }
     else {
         image_draw(image_offset + image_group(GROUP_PANEL_WINDOWS),
             c->x_offset + 180, c->y_offset + 45, COLOR_MASK_NONE, SCALE_NONE);

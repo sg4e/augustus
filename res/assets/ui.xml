@@ -240,4 +240,5 @@
 	<image src="Rhodes" />
 	<!-- Note: Add Ceres Fauna uuu -->
 	<image id="CeresFauna" src="CeresFauna" />
+	<image id="GawrGura" src="GawrGura" />
 </assetlist>

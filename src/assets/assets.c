@@ -52,6 +52,7 @@ void assets_init(int force_reload, color_t **main_images, int *main_image_widths
     data.asset_lookup[ASSET_GOLD_SHIELD] = assets_get_image_id("UI", "GoldShield");
     data.asset_lookup[ASSET_HAGIA_SOPHIA_FIX] = assets_get_image_id("UI", "H Sophia Fix");
     data.asset_lookup[ASSET_CERES_FAUNA] = assets_get_image_id("UI", "CeresFauna");
+    data.asset_lookup[ASSET_GAWR_GURA] = assets_get_image_id("UI", "GawrGura");
     data.asset_lookup[ASSET_FIRST_ORNAMENT] = assets_get_image_id("UI", "First Ornament");
 }
 
