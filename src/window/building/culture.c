@@ -305,7 +305,7 @@ static void draw_temple_info(building_info_context *c, int image_offset)
             c->x_offset + 132, c->y_offset + 60, font, 0);
         text_draw_multiline(translation_for(TR_BUILDING_VENUS_TEMPLE_MODULE_DESC),
             c->x_offset + 112, c->y_offset + 90, BLOCK_SIZE * c->width_blocks - 132, FONT_NORMAL_BLACK, 0);
-        image_draw(image_offset + image_group(GROUP_PANEL_WINDOWS),
+        image_draw(assets_lookup_image_id(ASSET_TAKANASHI_KIARA),
             c->x_offset + BLOCK_SIZE, c->y_offset + 45, COLOR_MASK_NONE, SCALE_NONE);
 
         return;
@@ -359,6 +359,10 @@ static void draw_temple_info(building_info_context *c, int image_offset)
     }
     else if (building_is_mercury_temple(b->type)) {
         int image_id = assets_lookup_image_id(ASSET_NANASHI_MUMEI);
+        image_draw(image_id, c->x_offset + 180, c->y_offset + 45, COLOR_MASK_NONE, SCALE_NONE);
+    }
+    else if (building_is_venus_temple(b->type)) {
+        int image_id = assets_lookup_image_id(ASSET_TAKANASHI_KIARA);
         image_draw(image_id, c->x_offset + 180, c->y_offset + 45, COLOR_MASK_NONE, SCALE_NONE);
     }
     else {
