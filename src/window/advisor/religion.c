@@ -42,10 +42,10 @@ static int get_religion_advice(void)
     }
 }
 
-static void draw_god_row(god_type god, int y_offset, building_type small_temple,
+static void draw_god_row(god_type god, uint8_t *str, int y_offset, building_type small_temple,
     building_type large_temple, building_type grand_temple)
 {
-    lang_text_draw(59, 11 + god, 40, y_offset, FONT_NORMAL_WHITE);
+    text_draw(str, 40, y_offset, FONT_NORMAL_WHITE, 0);
     lang_text_draw(59, 16 + god, 120, y_offset + 1, FONT_SMALL_PLAIN);
     text_draw_number_centered(building_count_active(small_temple), 230, y_offset, 50, FONT_NORMAL_WHITE);
     if (building_count_active(grand_temple)) {
@@ -145,15 +145,15 @@ static int draw_background(void)
     inner_panel_draw(32, 60, 36, 9);
 
     // god rows
-    draw_god_row(GOD_CERES, 66, BUILDING_SMALL_TEMPLE_CERES,
+    draw_god_row(GOD_CERES, "Ceres", 66, BUILDING_SMALL_TEMPLE_CERES,
         BUILDING_LARGE_TEMPLE_CERES, BUILDING_GRAND_TEMPLE_CERES);
-    draw_god_row(GOD_NEPTUNE, 86, BUILDING_SMALL_TEMPLE_NEPTUNE,
+    draw_god_row(GOD_NEPTUNE, "Gura", 86, BUILDING_SMALL_TEMPLE_NEPTUNE,
         BUILDING_LARGE_TEMPLE_NEPTUNE, BUILDING_GRAND_TEMPLE_NEPTUNE);
-    draw_god_row(GOD_MERCURY, 106, BUILDING_SMALL_TEMPLE_MERCURY,
+    draw_god_row(GOD_MERCURY, "Mumei", 106, BUILDING_SMALL_TEMPLE_MERCURY,
         BUILDING_LARGE_TEMPLE_MERCURY, BUILDING_GRAND_TEMPLE_MERCURY);
-    draw_god_row(GOD_MARS, 126, BUILDING_SMALL_TEMPLE_MARS,
+    draw_god_row(GOD_MARS, "Baelz", 126, BUILDING_SMALL_TEMPLE_MARS,
         BUILDING_LARGE_TEMPLE_MARS, BUILDING_GRAND_TEMPLE_MARS);
-    draw_god_row(GOD_VENUS, 146, BUILDING_SMALL_TEMPLE_VENUS,
+    draw_god_row(GOD_VENUS, "Kiara", 146, BUILDING_SMALL_TEMPLE_VENUS,
         BUILDING_LARGE_TEMPLE_VENUS, BUILDING_GRAND_TEMPLE_VENUS);
 
     // oracles

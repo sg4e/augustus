@@ -92,7 +92,16 @@ static void draw_background(void)
     graphics_in_dialog();
 
     outer_panel_draw(48, 48, 34, 20);
-    lang_text_draw_centered(58, 25 + city_festival_selected_god(), 48, 60, 544, FONT_LARGE_BLACK);
+    uint8_t *god_name;
+    switch (city_festival_selected_god()) {
+        case 0: god_name = "Hold festival to Ceres"; break;
+        case 1: god_name = "Hold festival to Gura"; break;
+        case 2: god_name = "Hold festival to Mumei"; break;
+        case 3: god_name = "Hold festival to Hakos"; break;
+        case 4: god_name = "Hold festival to Kiara"; break;
+        default: god_name = "Hold festival to Idol"; break;
+    }
+    text_draw_centered(god_name, 48, 60, 544, FONT_LARGE_BLACK, 0);
     for (int god = 0; god < MAX_GODS; god++) {
         int image_id;
         switch (god) {
