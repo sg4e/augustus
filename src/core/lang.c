@@ -507,6 +507,18 @@ const uint8_t *lang_get_string(int group, int index)
                 return translation_for(TR_BUILDING_GOLD_MINE);
             case BUILDING_CITY_MINT:
                 return translation_for(TR_BUILDING_CITY_MINT);
+            case BUILDING_SMALL_TEMPLE_NEPTUNE:
+            case BUILDING_LARGE_TEMPLE_NEPTUNE:
+                return "Gura";
+            case BUILDING_SMALL_TEMPLE_MERCURY:
+            case BUILDING_LARGE_TEMPLE_MERCURY:
+                return "Mumei";
+            case BUILDING_SMALL_TEMPLE_MARS:
+            case BUILDING_LARGE_TEMPLE_MARS:
+                return "Baelz";
+            case BUILDING_SMALL_TEMPLE_VENUS:
+            case BUILDING_LARGE_TEMPLE_VENUS:
+                return "Kiara";
             default:
                 break;
         }
