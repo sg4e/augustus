@@ -337,7 +337,8 @@ static void draw_temple_info(building_info_context *c, int image_offset)
                 BLOCK_SIZE * c->width_blocks - 132, FONT_NORMAL_BLACK, 0);
         }
 
-        image_draw(image_offset + image_group(GROUP_PANEL_WINDOWS), c->x_offset + 16, c->y_offset + 45,
+        //the wide asset adjust the x coordinate, see below
+        image_draw(assets_lookup_image_id(ASSET_HAKOS_BAELZ_WIDE), c->x_offset + 16 - 24, c->y_offset + 45,
             COLOR_MASK_NONE, SCALE_NONE);
 
         return;
@@ -350,6 +351,11 @@ static void draw_temple_info(building_info_context *c, int image_offset)
     else if (building_is_neptune_temple(b->type)) {
         int image_id = assets_lookup_image_id(ASSET_GAWR_GURA);
         image_draw(image_id, c->x_offset + 180, c->y_offset + 45, COLOR_MASK_NONE, SCALE_NONE);
+    }
+    else if (building_is_mars_temple(b->type)) {
+        int image_id = assets_lookup_image_id(ASSET_HAKOS_BAELZ_WIDE);
+        //the wide asset adjust the x coordinate, see below
+        image_draw(image_id, c->x_offset + 180 - 24, c->y_offset + 45, COLOR_MASK_NONE, SCALE_NONE);
     }
     else {
         image_draw(image_offset + image_group(GROUP_PANEL_WINDOWS),

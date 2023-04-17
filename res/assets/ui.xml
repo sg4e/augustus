@@ -241,4 +241,6 @@
 	<!-- Note: Add Ceres Fauna uuu -->
 	<image id="CeresFauna" src="CeresFauna" />
 	<image id="GawrGura" src="GawrGura" />
+	<image id="HakosBaelz" src="HakosBaelz" />
+	<image id="HakosBaelzWide" src="HakosBaelzWide" />
 </assetlist>
